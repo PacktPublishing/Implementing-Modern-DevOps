@@ -1,0 +1,20 @@
+---
+- hosts: all
+  user: root
+  vars:
+    names: ['David', 'Ester', 'Elena']
+    namesAge:
+      - name: David
+        age: 33
+      - name: Ester
+        age: 31
+      - name: Elena
+        age: 1
+  tasks:
+  - name: Greetings
+    debug: msg="Greetings {{ item }}! Live long and prosper."
+    with_items: "{{ names }}"
+    when: False
+  - name: Presentations
+    debug: msg="My name is {{ item.name }} and I am {{ item.age }} years old."
+    with_items: "{{ namesAge }}"
