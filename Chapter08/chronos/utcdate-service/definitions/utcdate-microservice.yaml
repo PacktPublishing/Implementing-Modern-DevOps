@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: utcdate-service
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: utcdate-service
+    spec:
+      containers:
+      - name: utcdate-service
+        image: eu.gcr.io/implementing-modern-devops/utcdate-service:1.0
+        ports:
+        - containerPort: 3001

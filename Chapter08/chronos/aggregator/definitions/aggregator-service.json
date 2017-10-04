@@ -1,0 +1,17 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "aggregator-service"
+  },
+  "spec": {
+    "ports": [{
+      "port": 80,
+      "targetPort": 8080
+    }],
+    "selector": {
+      "app": "aggregator-service"
+    },
+    "type": "LoadBalancer"
+  }
+}

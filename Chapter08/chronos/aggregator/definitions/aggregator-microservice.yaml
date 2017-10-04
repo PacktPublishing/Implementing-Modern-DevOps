@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: aggregator-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: aggregator-service
+    spec:
+      containers:
+      - name: aggregator-service
+        image: eu.gcr.io/david-on-microservices/aggregator:latest
+        ports:
+        - containerPort: 8080

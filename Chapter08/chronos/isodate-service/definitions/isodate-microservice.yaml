@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: isodate-service
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: isodate-service
+    spec:
+      containers:
+      - name: isodate-service
+        image: eu.gcr.io/implementing-modern-devops/isodate-service:1.0
+        ports:
+        - containerPort: 3000

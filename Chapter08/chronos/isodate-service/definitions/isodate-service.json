@@ -1,0 +1,17 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "isodate-service"
+  },
+  "spec": {
+    "ports": [{
+      "port": 3000,
+      "targetPort": 3000
+    }],
+    "selector": {
+      "app": "isodate-service"
+    },
+    "type": "ClusterIP"
+  }
+}
