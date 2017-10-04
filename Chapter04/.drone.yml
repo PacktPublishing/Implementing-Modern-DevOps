@@ -1,0 +1,7 @@
+debug: true
+pipeline:
+  build:
+    image: node
+    commands:
+      - npm install --development
+      - npm test
